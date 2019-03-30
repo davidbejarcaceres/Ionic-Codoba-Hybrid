@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalle del repositorio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Repo Info</ion-card-subtitle>
+          <ion-card-title>{{repo.name}}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+            <div *ngIf="repo.description; else elseBlock"> 
+                {{repo.description}}
+                <p> - Languaje - </p>
+            </div>
+              <ng-template #elseBlock>No hay descripción disponible</ng-template>
+        </ion-card-content>
+      </ion-card>
+</ion-content>
