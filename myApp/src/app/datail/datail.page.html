@@ -1,6 +1,11 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Detalle del repositorio</ion-title>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button text="Repos" routerDirection="backward" (click)="regresar()" [routerLink]="'/tabs/tab3'" >
+            <ion-ripple-effect></ion-ripple-effect>
+          </ion-back-button>
+      </ion-buttons>
+    <ion-title >Detalle del repositorio</ion-title>
   </ion-toolbar>
 </ion-header>
 

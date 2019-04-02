@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { IonicModule } from '@ionic/angular';
 

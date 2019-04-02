@@ -22,10 +22,11 @@ export class Tab3Page {
 
   constructor(public http: Http, private reposProvider: ReposService, public navCtrl: NavController) {
   }
+  
   getRepo(username){
     // this.http.get(`https://api.github.com/users/${username}/repos`).subscribe(data => {this.repos = <Repo[]>data.json(); console.log(this.repos);
     // });    
-    this.reposProvider.getRepos(username).subscribe(reposArray => {
+    this.reposProvider.getRepos(username).subscribe(async reposArray => {
       this.repos = <Repo[]>reposArray;
     })    
   }
