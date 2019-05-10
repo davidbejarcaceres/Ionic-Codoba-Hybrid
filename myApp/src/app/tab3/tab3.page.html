@@ -6,28 +6,34 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list inset>
-    <ion-item class="autocomplete">
-      <ion-label position="floating">Usuario</ion-label>
-      <ion-input [(ngModel)]="username" type="text" placeholder="GitHub username" class="autocomplete" autocomplete="on"></ion-input> 
-    </ion-item>
-  </ion-list>
-  <div padding>
-    <ion-button expand="block" (click)='getRepo(username)'>
-      <ion-ripple-effect></ion-ripple-effect>
-      Obtener repositorios
-    </ion-button> 
-  </div>
-
-  <ion-list>
-      <ion-item button *ngFor="let repo of repos" [routerLink]="['/datail/', repo]" routerDirection="forward">
-        <ion-ripple-effect></ion-ripple-effect>        
-        <ion-label>
-            <h2>{{repo.name}}</h2>
-  
-            <p>{{repo.description}}</p>
-          </ion-label>  
-      </ion-item>    
-  </ion-list>
+<ion-content>
+  <ion-grid fixed>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-xl="9" size-lg="9">
+          <ion-list inset>
+              <ion-item class="autocomplete">
+                <ion-label position="floating">Usuario</ion-label>
+                <ion-input [(ngModel)]="username" type="text" placeholder="GitHub username" class="autocomplete" autocomplete="on"></ion-input> 
+              </ion-item>
+            </ion-list>
+            <div padding>
+              <ion-button expand="block" (click)='getRepo(username)'>
+                <ion-ripple-effect></ion-ripple-effect>
+                Obtener repositorios
+              </ion-button> 
+            </div>
+          
+            <ion-list>
+                <ion-item button *ngFor="let repo of repos" [routerLink]="['/datail/', repo]" routerDirection="forward">
+                  <ion-ripple-effect></ion-ripple-effect>        
+                  <ion-label>
+                      <h2>{{repo.name}}</h2>
+            
+                      <p>{{repo.description}}</p>
+                    </ion-label>  
+                </ion-item>    
+            </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

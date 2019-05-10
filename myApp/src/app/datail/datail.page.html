@@ -10,23 +10,28 @@
 </ion-header>
 
 <ion-content padding>
-
-    <ion-card>
-        <ion-ripple-effect></ion-ripple-effect>
-        <ion-img src="/assets/Octocat.png"></ion-img>
-        <ion-card-header>
-          <ion-ripple-effect></ion-ripple-effect>
-          <ion-card-subtitle>Repo Info</ion-card-subtitle>
-          <ion-card-title>{{repo.name}}</ion-card-title>
-        </ion-card-header>
-      
-        <ion-card-content>
-            <ion-ripple-effect></ion-ripple-effect>
-            <div *ngIf="repo.description; else elseBlock"> 
-                {{repo.description}}
-                <p> - Languaje - </p>
-            </div>
-              <ng-template #elseBlock>No hay descripción disponible</ng-template>
-        </ion-card-content>
-      </ion-card>
+  <ion-grid fixed>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-xl="9" size-lg="9">
+          <ion-card>
+              <ion-ripple-effect></ion-ripple-effect>
+              <ion-img src="/assets/Octocat.png"></ion-img>
+              <ion-card-header>
+                <ion-ripple-effect></ion-ripple-effect>
+                <ion-card-subtitle>Repo Info</ion-card-subtitle>
+                <ion-card-title>{{repo.name}}</ion-card-title>
+              </ion-card-header>
+            
+              <ion-card-content>
+                  <ion-ripple-effect></ion-ripple-effect>
+                  <div *ngIf="repo.description; else elseBlock"> 
+                      {{repo.description}}
+                      <p> - Languaje - </p>
+                  </div>
+                    <ng-template #elseBlock>No hay descripción disponible</ng-template>
+              </ion-card-content>
+            </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
