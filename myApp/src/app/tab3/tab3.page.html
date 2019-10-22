@@ -25,7 +25,10 @@
           
             <ion-list>
                 <ion-item button *ngFor="let repo of repos" [routerLink]="['/datail/', repo]" routerDirection="forward">
-                  <ion-ripple-effect></ion-ripple-effect>        
+                  <ion-ripple-effect></ion-ripple-effect>
+                  <ion-avatar slot="start">
+                    <ion-img src="/assets/Octocat.png"></ion-img>
+                  </ion-avatar>       
                   <ion-label>
                       <h2>{{repo.name}}</h2>
             
@@ -33,6 +36,26 @@
                     </ion-label>  
                 </ion-item>    
             </ion-list>
+
+
+          <!-- Skeleton screen -->
+          <div *ngIf="!repos">
+            <ion-list>
+              <ion-item *ngFor="let i of [1,2,3,4,5,6,7,8,9]">
+                <ion-avatar slot="start">
+                  <ion-skeleton-text animated></ion-skeleton-text>
+                </ion-avatar>
+                <ion-label>
+                  <h2>
+                    <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+                  </h2>
+                  <p>
+                    <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+                  </p>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </div>
       </ion-col>
     </ion-row>
   </ion-grid>
